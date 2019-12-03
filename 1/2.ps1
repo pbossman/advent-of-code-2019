@@ -11,10 +11,10 @@ function get-fuel {
     )
 
     $var = ([math]::floor($mass / 3) - 2)
-    Write-Verbose $var
+    Write-Verbose "Value $var"
     if ($var -gt 0) {
+        Write-Verbose "Adding $var"
         $var + (get-fuel -Mass $var)
-        Write-Verbose "Addition $var"
     }
 }
 
